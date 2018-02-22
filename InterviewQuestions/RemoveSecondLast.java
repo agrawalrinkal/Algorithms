@@ -2,11 +2,21 @@
 Given one sentence at a time, return the second last word of the sentence. (15 mins)
 */
 
+import java.util.ArrayList;
+
 public class RemoveSecondLast {
   public static void main(String args[]) {
-    String str = "  Hey there how are you doin!  ";
-    String result = removeSecondLastWord(str);
+    String str = "  Hey there how are you doing!";
+    String result = extractSecondLastWord(str);
     System.out.println(result);
+  }
+
+  public static String extractSecondLastWord(String str) {
+    str = str.trim();
+    String[] stringArray = str.split("\\s+");
+    if (stringArray.length > 1)
+      return stringArray[stringArray.length - 2];
+    return "";
   }
 
   public static String removeSecondLastWord(String str) {
