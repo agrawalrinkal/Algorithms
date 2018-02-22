@@ -15,19 +15,15 @@ public class LowestUnique {
 
   private int findIndex(int[] n) {
     int[] nCopy = n.clone();
-
     Arrays.sort(n);
 
-    int  i = 0;
-    while(i < n.length - 1) {
+    for(int i = 0; i < n.length - 1; i = i + 2) {
       if (n[i] != n[i + 1]) {
         for(int j = 0; j < nCopy.length - 1; j++) {
           if (nCopy[j] == n[i])
-
             return j;
           }
       }
-      i += 2;
     }
     return -1;
   }
